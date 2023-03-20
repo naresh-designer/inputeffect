@@ -4,14 +4,47 @@
 <html>
 <body>
 
+    <form action="">
 <div class="inputBox">
-    <input type="text" required="required">
-    <span>First Name</span>
+    <input type="text" name="loginUser" id="email" required>
+    <label for="loginUser">Email</label>
 </div>
 <div class="inputBox">
-    <input type="text" required="required">
-    <span>Last Name</span>
+    <input type="password" name="loginPass" id="password" required>
+    <label for="loginPass">Passowrd</label>
 </div>
+<input type="submit" value="login" class="button">
+</form>
 
+
+<script>
+    // function myButton(){
+    //     const email = document.querySelector('#email').value;
+    //     const pass = document.querySelector('#password').value;
+
+    //     if(email == "admin@gmail.com"  && pass == "admin123"){
+    //         window.location.assign("https://google.com");
+    //         alert("Login SuccessFully");
+    //     }else{
+    //         alert("Invalid Information");
+    //         return;
+    //     }
+    // }
+
+    const myButton = document.querySelector('.button');
+    myButton.onclick = (e) => {
+        e.preventDefault();
+        const email = document.querySelector('#email').value;
+        const pass = document.querySelector('#password').value;
+
+        if(email == "admin@gmail.com" && pass == "admin123"){
+            window.location.assign("https://google.com");
+            alert("login successfully");
+        }else{
+            alert("invalid information");
+            return;
+        }
+    }
+</script>
 </body>
 </html>

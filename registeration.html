@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/inputEffect.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<html>
+<body>
+
+    <form action="">
+<div class="inputBox">
+    <input type="text" id="fname" required>
+    <label>First Name</label>
+</div>
+<div class="inputBox">
+    <input type="text"  id="lname" required>
+    <label>Last Name</label>
+</div>
+<div class="inputBox">
+    <input type="text"  id="email" required>
+    <label>Email</label>
+</div>
+<div class="inputBox">
+    <input type="password"  id="password" required>
+    <label>Password</label>
+</div>
+<div class="inputBox">
+    <input type="password"  id="cPassword" required>
+    <label>Conform Password</label>
+</div>
+<input type="submit" value="login" class="button">
+</form>
+
+
+<script>
+    const submitButton = document.querySelector('.button');
+    submitButton.onclick = (e) => {
+        const fname = document.querySelector('#fname').value;
+        const lname = document.querySelector('#lname').value;
+        const email = document.querySelector('#email').value;
+        const pass = document.querySelector('#password').value;
+        const cPass = document.querySelector('#cPassword').value;
+
+        localStorage.setItem('FirstName', fname);
+        localStorage.setItem('LastName', lname);
+        localStorage.setItem('Email', email);
+        localStorage.setItem('Password', pass);
+        localStorage.setItem('Cpassword', cPass);
+
+        if(fname == "" && lname == "" && email == "" && pass == "" && cPass == ""){
+            swal("input field is no value", "You clicked the button!", "error");
+        }else{
+            if(pass !== cPass){
+                swal("password is not matching", "You clicked the button!", "info");
+            }else{
+                swal("login successfully", "You clicked the button!", "success");
+            }
+        }
+    }
+</script>
+<script src="js/sweetalret.js"></script>
+</body>
+</html>

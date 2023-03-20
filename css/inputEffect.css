@@ -9,6 +9,7 @@ body{
 
 .inputBox{
     position: relative;
+    width: 300px;
 }
 
 .inputBox input{
@@ -16,27 +17,27 @@ body{
     padding: 20px 10px;
     border-radius: 5px;
     border: 1px solid rgba(255,255,255,0.25);
-    background-color: transparent;
+    background: none;
     outline: none;
     color: #fff;
-    letter-spacing: 4px;
-    font-size: 20px;
+    letter-spacing: 2px;
+    font-size: 15px;
     margin-bottom: 20px;
     transition: .5s;
 }
 
-.inputBox span{
+.inputBox label{
     position: absolute;
     top: 0;
     left: 0;
     padding: 20px 10px;
-    font-size: 20px;
+    font-size: 15px;
     color: rgba(255,255,255,0.25);
     pointer-events: none;
     text-transform: uppercase;
     transition: .5s;
 }
-.inputBox input:valid ~ span, .inputBox input:focus ~ span{
+.inputBox input:valid ~ label, .inputBox input:focus ~ label{
     color: aqua;
     transform: translateX(10px) translateY(-10px);
     padding: 4px 10px;
@@ -49,5 +50,16 @@ body{
 }
 .inputBox input:valid, .inputBox input:focus{
    border: 1px solid aqua;
+   background: none;
 
+}
+.button{
+    position: relative;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    font-size: 20px;
 }
