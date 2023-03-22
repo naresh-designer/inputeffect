@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/inputEffect.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+    .invalid .inputBox::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        background-color: red;
+        z-index: 9999;
+    }
+    .valid .inputBox::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        background-color: green;
+        z-index: 9999;
+    }
+</style>
+<html>
+<body>
+
+<form id="form" action="#">
+<div class="inputBox">
+    <input type="text" name="loginUser" id="email" required onkeydown="validation()">
+    <label for="loginUser">Enter Email Id</label>
+    <span id="text"></span>
+</div>
+<!-- <div class="inputBox">
+    <input type="password" name="loginPass" id="password" required>
+    <label for="loginPass">Passowrd</label>
+</div> -->
+<input type="submit" value="login" class="button">
+</form>
+
+<script>
+    const validation = ()=>{
+        const form = document.querySelector('#form');
+        const email = document.querySelector('#email').value;
+        const text = document.querySelector('#text');
+        const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        
+        if (email.match(pattern)){
+            form.classList.add("valid");
+            form.classList.remove("invalid");
+            text.innerHTML = "vaild Email Address";
+            text.style.color = "green";
+        }else{
+            form.classList.remove("valid");
+            form.classList.add("invalid");
+            text.innerHTML = "please enter vaild Email Address";
+            text.style.color = "red";
+        }
+        if (email = ""){
+            form.classList.remove("valid","invalid");
+            text.innerHTML = "";
+            text.style.color = "green";
+        }
+    }
+</script>
+</body>
+</html>

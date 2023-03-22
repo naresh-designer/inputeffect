@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/inputEffect.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+    .circul{
+        background: red;
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        transition: .5s ease-in-out;
+        animation: show 1s linear infinite alternate-reverse;
+    }
+    @keyframes show{
+        0%{
+            transform: scale(1); background-color:blue;border: 1px solid black;
+        }
+        100%{
+            transform: scale(1.1);background-color:yellow;border: 1px solid cyan;
+        }
+    }
+</style>
+<html>
+<body>
+
+   <div class="circul"></div>
+</form>
+</body>
+</html>
